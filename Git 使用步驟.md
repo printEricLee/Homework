@@ -1,5 +1,3 @@
-Git 是一個分佈式版本控制系統，用於跟蹤文件的變更，協作開發等。以下是一些常用的 Git 指令及其簡單說明：
-
 ### 基本指令
 
 1. **初始化 Git 倉庫**
@@ -95,4 +93,34 @@ Git 是一個分佈式版本控制系統，用於跟蹤文件的變更，協作�
    git reset --hard <commit-id>
    ```
 
-這些指令能幫助你開始使用 Git 進行版本控制。如果有任何具體問題，歡迎隨時詢問！
+### 清除 Git 倉庫中的所有已提交文件
+
+1. **創建一個新的孤立分支**
+   ```bash
+   git checkout --orphan new_branch
+   ```
+
+2. **添加所有文件**
+   ```bash
+   git add -A
+   ```
+
+3. **提交更改**
+   ```bash
+   git commit -m "Initial commit with no history"
+   ```
+
+4. **刪除舊分支**
+   ```bash
+   git branch -D main
+   ```
+
+5. **重命名新分支**
+   ```bash
+   git branch -m main
+   ```
+
+6. **強制推送到遠程倉庫**
+   ```bash
+   git push -f origin main
+   ```
